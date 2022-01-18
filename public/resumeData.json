@@ -15,7 +15,7 @@
       "zip": "9100"
     },
     "website": "https://abumusa-portfolio.web.app/",
-    "resumedownload": " ",
+    "resumedownload": "https://drive.google.com/file/d/1JJN50tPYMqJP6FJS7lhtzTBLXEJNFnBD/view?usp=sharing",
     "social": [
       {
         "name": "facebook",
@@ -40,12 +40,12 @@
     ]
   },
   "resume": {
-    "skillmessage": "My specialties include quickly learning new skills and programming languages, problem solving, responsive design principles, and MVVM and MVC method of organizing code. So far I have C, C++, C#, JavaScript, HTML, CSS, jQuery, Bootstrap, ReactJS, AngularJS, PHP, Node.JS, Express.JS , MongoDB and Git/Github under my belt. I have developed several projects using these technologies and love working on different type of projects. I've started learning Amazon Web Services(AWS), Software testing and different type of project management software. I'm still enthusiastically grabbing onto any other programming languages, frameworks, or principles I can integrate into the coding web in my head.",
+    "skillmessage": "My specialties include quickly learning new skills and programming languages, problem solving, responsive design principles, and MVVM and MVC method of organizing code. So far I have C, C++, C#, JavaScript, HTML, CSS, jQuery, Bootstrap, ReactJS, NextJS,Redux, PHP, Node.JS, Express.JS , MongoDB and Git/Github under my belt.",
     "education": [
       {
         "school": "Khulna University Of Engineering & Technology",
         "degree": "M.Sc. Engg. in Information and Communications Technology",
-        "description": "Currently a Part-time Student."
+        "description": "CGPA- 3.50 (Currently working on thesis"
       },
       {
         "school": "North Western University, Khulna",
@@ -55,19 +55,35 @@
     ],
     "work": [
       {
+        "company": "AndiT",
+        "title": "Full-Stack MERN Specialist",
+        "years": "June 2021 - Present",
+        "description": "My responsiblity is to develop, maintain and deploy full-stack sites"
+      },
+      {
+        "company": "AppStick",
+        "title": "React Developer",
+        "years": "January 2021 - May 2021",
+        "description": "Developed and updated ecommerce sites."
+      },
+      {
         "company": "Freelancer",
         "title": "Full-Stack React Specialist",
-        "years": "July 2019 - Present",
+        "years": "Janyary 2020 - December 2020",
         "description": "Develop Responsive WebApp for Clients"
       }
     ],
     "skills": [
       {
         "name": "ReactJs",
+        "level": "80%"
+      },
+      {
+        "name": "NextJS",
         "level": "70%"
       },
       {
-        "name": "JavaScript",
+        "name": "Redux",
         "level": "65%"
       },
       {
@@ -75,21 +91,47 @@
         "level": "50%"
       },
       {
-        "name": "Node && PHP",
-        "level": "55%"
+        "name": "Python && GO",
+        "level": "40%"
       },
       {
-        "name": "Wordpress",
-        "level": "50%"
+        "name": "JavaScript",
+        "level": "80%"
       },
       {
-        "name": "MongoDB && MySQL",
+        "name": "Node && Express",
+        "level": "75%"
+      },
+      {
+        "name": "MongoDB",
+        "level": "70%"
+      },
+      {
+        "name": "Digital Ocean && AWS EC2",
         "level": "60%"
       }
     ]
   },
   "portfolio": {
     "projects": [
+      {
+        "title": "FoodJocky",
+        "category": "Food Delivery Service (MERNG Stack)",
+        "image": "f1.png",
+        "url": "https://foodjocky.com/"
+      },
+      {
+        "title": "AndShop",
+        "category": "Ecommerce Template and Admin dashboard(MERN Stack-ongoing project)",
+        "image": "andshop.png",
+        "url": "https://themeforest.net/item/andshop-ecommerce-react-js-template/33822003"
+      },
+      {
+        "title": "KingShop",
+        "category": "Ecommerce Site (MERN Stack)",
+        "image": "king.png",
+        "url": "https://kingshopapp.herokuapp.com/"
+      },
       {
         "title": "COVID19 TRACKER",
         "category": "COVID19 TRACKER built with React, Charts and disease.sh api and hosted on firebase",
@@ -118,6 +160,10 @@
   },
   "testimonials": {
     "testimonials": [
+      {
+        "text": "You made it so simple. My new site is so much faster and easier to work with than my old site. I just choose the page, make the change and click save.Thank You!",
+        "user": "Jen Havice, E-Commerce Bussiness Owner."
+      },
       {
         "text": "You made it so simple. My new site is so much faster and easier to work with than my old site. I just choose the page, make the change and click save.Thank You!",
         "user": "Jen Havice, E-Commerce Bussiness Owner."
