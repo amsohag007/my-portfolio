@@ -1,10 +1,10 @@
 {
   "main": {
     "name": "MD. ABU MUSA",
-    "occupation": "ReactJS Developer && Full-Stack Developer",
+    "occupation": "Full-Stack Developer",
     "description": "",
     "image": "musa.jpeg",
-    "bio": "My name is Musa, I'm a Full Stack ReactJS Developer. Currently I'm working as a freelancer and also looking for opportunity to join a team.",
+    "bio": "Welcome to my LinkedIn profile! I am AbuMusa a highly skilled and passionate full-stack developer with a Master's in Engineering (ICT). With over 4 years of industry experience, I have a strong foundation in web development and a deep understanding of modern technologies.",
     "contactmessage": "Get in touch with me to receive further details.",
     "email": "amsohag007@gmail.com",
     "phone": "+880 1922 718131",
@@ -40,7 +40,7 @@
     ]
   },
   "resume": {
-    "skillmessage": "My specialties include quickly learning new skills and programming languages, problem solving, responsive design principles, and MVVM and MVC method of organizing code. So far I have C, C++, C#, JavaScript, HTML, CSS, jQuery, Bootstrap, ReactJS, NextJS,Redux, PHP, Node.JS, Express.JS , MongoDB and Git/Github under my belt.",
+    "skillmessage": "My specialties include quickly learning new skills and programming languages, problem solving, responsive design principles, and MVVM and MVC method of organizing code. I am an expert in NodeJS(expressjs & nestjs).Beside that, I have C++, JavaScript, TypeScript, Python,GoLang, HTML, CSS, ReactJS, NextJS,Redux,MySQL, MongoDB, PostgreSQL, Prisma, TypeORM,docker and Git/Github under my belt. My next target is to learn devOps and CICD concepts.",
     "education": [
       {
         "school": "Khulna University Of Engineering & Technology",
@@ -55,65 +55,91 @@
     ],
     "work": [
       {
+        "company": "NetMark",
+        "title": "Full-Stack Developer (Remote)",
+        "years": "Nov 2021 - Present",
+        "description": "My responsiblity was to implement robust and scalable server-side applications using modern programming languages such as Node.js or Golang. Build and optimize databases (SQL or NoSQL) to handle large amounts of data efficiently,  testing, deployment, and ongoing apps maintenance. I have developed 6+ production level application backend for them."
+      },
+      {
+        "company": "Softic",
+        "title": "Full-Stack Developer (Remote)",
+        "years": "July 2022 - Dec 2022",
+        "description": "My responsiblity was to engage in the complete software development life cycle, from gathering requirements and planning to coding, testing, deployment, and ongoing maintenance. I have developed full backend apis with swagger documentation and many crucial feature for them."
+      },
+      {
         "company": "AndiT",
         "title": "Full-Stack MERN Specialist",
-        "years": "June 2021 - Present",
-        "description": "My responsiblity is to develop, maintain and deploy full-stack sites"
+        "years": "June 2021 - June 2022",
+        "description": "My responsiblity was to develop and integrate RESTful APIs to facilitate seamless communication between the front-end and back-end components. Ensure data security and efficient data transfer. I have developed 5+ production level application for them. www.foodjocky.com was best among them."
       },
       {
         "company": "AppStick",
-        "title": "React Developer",
-        "years": "January 2021 - May 2021",
+        "title": "React/NodeJs Developer",
+        "years": "July 2020 - May 2021",
         "description": "Developed and updated ecommerce sites."
       },
       {
         "company": "Freelancer",
         "title": "Full-Stack React Specialist",
-        "years": "Janyary 2020 - December 2020",
+        "years": "Janyary 2020 - Ongoing",
         "description": "Develop Responsive WebApp for Clients"
       }
     ],
     "skills": [
       {
-        "name": "ReactJs",
-        "level": "80%"
-      },
-      {
-        "name": "NextJS",
-        "level": "70%"
-      },
-      {
-        "name": "Redux",
-        "level": "65%"
-      },
-      {
-        "name": "Firebase",
-        "level": "50%"
-      },
-      {
-        "name": "Python && GO",
-        "level": "40%"
-      },
-      {
-        "name": "JavaScript",
-        "level": "80%"
-      },
-      {
-        "name": "Node && Express",
+        "name": "JavaScript and TypeScript",
         "level": "75%"
       },
       {
-        "name": "MongoDB",
+        "name": "NodeJS( expressjs & nestjs)",
+        "level": "80%"
+      },
+      {
+        "name": "ReactJs/NextJs",
+        "level": "65%"
+      },
+      {
+        "name": "Python && GO",
+        "level": "50%"
+      },
+      {
+        "name": "SQL & NoSQL DB",
+        "level": "70%"
+      },
+      {
+        "name": "Prisma & TypeORM",
         "level": "70%"
       },
       {
         "name": "Digital Ocean && AWS EC2",
         "level": "60%"
+      },
+      {
+        "name": "Docker & CICD",
+        "level": "40%"
       }
     ]
   },
   "portfolio": {
     "projects": [
+      {
+        "title": "FixBill",
+        "category": "Car Maintanance Service.",
+        "image": "fixbil.png",
+        "url": "https://web.fixbil.no/"
+      },
+      {
+        "title": "Russgo",
+        "category": "Digital Card Service.",
+        "image": "russgo.png",
+        "url": "https://russgo.staging.netmark.no/"
+      },
+      {
+        "title": "Inoqare",
+        "category": "HealthCare Service.",
+        "image": "inoqare.png",
+        "url": "https://inoqare.com/"
+      },
       {
         "title": "FoodJocky",
         "category": "Food Delivery Service (MERNG Stack)",
