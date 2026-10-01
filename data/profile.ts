@@ -18,6 +18,29 @@ export const stats = [
   { value: "MSc in ICT", label: "KUET, Bangladesh" },
 ];
 
+export const services = [
+  {
+    title: "Discovery and architecture",
+    text: "I turn ideas and ambiguous requirements into a technical plan, estimates and a clear implementation path.",
+  },
+  {
+    title: "Full-stack delivery",
+    text: "I build SaaS features, dashboards, APIs and integrations end to end, with tests, through to production.",
+  },
+  {
+    title: "Payments and integrations",
+    text: "Payment providers, signed webhooks, reconciliation and third-party APIs, including the failure cases.",
+  },
+  {
+    title: "AI features",
+    text: "Agents with tool use, streaming interfaces, evaluation, and cost and rate controls.",
+  },
+  {
+    title: "Senior engineering support",
+    text: "I join an existing team and codebase when you need senior capacity without a permanent hire.",
+  },
+];
+
 const CS = "https://amsohag007.github.io/case-studies";
 
 export const caseStudies = [

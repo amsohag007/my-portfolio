@@ -8,6 +8,7 @@ import {
   experience,
   industries,
   profile,
+  services,
   skills,
   stats,
 } from "@/data/profile";
@@ -37,6 +38,7 @@ export default function Home() {
             {profile.name}
           </a>
           <ul className="hidden gap-5 text-sm text-muted md:flex">
+            <li><a className="hover:text-text" href="#services">Services</a></li>
             <li><a className="hover:text-text" href="#work">Work</a></li>
             <li><a className="hover:text-text" href="#projects">Projects</a></li>
             <li><a className="hover:text-text" href="#skills">Skills</a></li>
@@ -82,6 +84,30 @@ export default function Home() {
           ))}
         </div>
       </header>
+
+      <section id="services" className="border-t border-line py-14">
+        <div className={wrap}>
+          <SectionHeader
+            title="What I can help with"
+            sub="From the first architecture sketch to a feature running in production."
+          />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((s) => (
+              <div key={s.title} className={`${card} p-5`}>
+                <h3 className="mb-1.5 font-semibold">{s.title}</h3>
+                <p className="text-[15px] text-muted">{s.text}</p>
+              </div>
+            ))}
+            <div className="flex flex-col justify-center rounded-[14px] border border-accent bg-accent-soft p-5">
+              <h3 className="mb-1.5 font-semibold">Available for freelance and contract work</h3>
+              <p className="mb-4 text-[15px] text-muted">Tell me what you&apos;re building and where you need help.</p>
+              <a className={`${btnPrimary} self-start`} href={`mailto:${profile.email}?subject=Project%20enquiry`}>
+                Get in touch
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="work" className="border-t border-line py-14">
         <div className={wrap}>
