@@ -1,25 +1,23 @@
-# Getting Started with Create React App
+# Md. Abu Musa — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio built with Next.js (App Router), TypeScript and Tailwind CSS, exported as a static site.
 
-## Available Scripts
+Live: https://abumusa-portfolio.web.app · https://amsohag007.github.io
 
-In the project directory, you can run:
+## Develop
 
-### `git clone repo`
+```bash
+npm install
+npm run dev
+```
 
-### `cd my-portfolio`
+Content lives in `data/profile.ts`; images in `public/images/`.
 
-### `npm install`
+## Build and deploy
 
-### `npm start`
+```bash
+npm run build        # static export to out/
+firebase deploy      # Firebase Hosting (serves out/)
+```
 
-## After modification
-
-### `npm build`
-
-### `firebase login`
-
-### `firebase deploy`
-
-It will deploy the updated site to firebase
+The same `out/` folder is published to the `amsohag007.github.io` repository for GitHub Pages.

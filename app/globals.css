@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Dark-first: navy + gold. Light theme via [data-theme="light"]. */
+:root {
+  color-scheme: dark;
+  --bg: #0a1628;
+  --surface: #12213a;
+  --text: #e8edf5;
+  --muted: #9fb0c8;
+  --line: #1f3150;
+  --accent: #f5b83d;
+  --accent-ink: #1a1205;
+  --accent-soft: #2a2414;
+  --hl: #f5b83d;
+  --chip: #182a47;
+  --chip-text: #d6dfec;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --text: #0a1628;
+  --muted: #4a5a73;
+  --line: #e1e6ef;
+  --accent: #1d3461;
+  --accent-ink: #ffffff;
+  --accent-soft: #fdf3dc;
+  --hl: #a86b0c;
+  --chip: #eef1f6;
+  --chip-text: #2b3a55;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-hl: var(--hl);
+  --color-chip: var(--chip);
+  --color-chip-text: var(--chip-text);
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
