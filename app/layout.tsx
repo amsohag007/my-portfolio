@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Md. Abu Musa — Full-Stack Software Engineer",
     description: "Multi-tenant SaaS, payment integrations and AI agents, from architecture to production.",
     type: "website",
-    images: ["/images/musa.jpeg"],
+    images: ["/images/abu-musa-profile.jpg"],
   },
 };
 

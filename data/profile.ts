@@ -8,7 +8,7 @@ export const profile = {
   email: "amsohag007@gmail.com",
   linkedin: "https://www.linkedin.com/in/abumusa007",
   github: "https://github.com/amsohag007",
-  photo: "/images/musa.jpeg",
+  photo: "/images/abu-musa-profile.jpg",
 };
 
 export const stats = [
