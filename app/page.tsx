@@ -2,6 +2,7 @@ import type { CSSProperties, ReactNode } from "react";
 import {
   AppWindow,
   ArrowRight,
+  ArrowUpRight,
   Cloud,
   Code,
   CreditCard,
@@ -28,6 +29,7 @@ import {
   services,
   skills,
   stats,
+  upworkStats,
   type ServiceIcon,
   type SkillIcon,
 } from "@/data/profile";
@@ -287,6 +289,34 @@ export default function Home() {
             </div>
 
             <div className="side">
+              {(() => {
+                const inner = (
+                  <>
+                    <div className="uh">
+                      <span className="ulogo">Up</span>
+                      <div>
+                        <b>Freelancing on Upwork</b>
+                        <span className="us">Freelance Full Stack Engineer · 2021 – 2025</span>
+                      </div>
+                      {profile.upwork && <ArrowUpRight className="ua" size={16} strokeWidth={2} />}
+                    </div>
+                    <div className="ustats">
+                      {upworkStats.map((u) => (
+                        <span key={u.label}>
+                          <b>{u.value}</b> {u.label}
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                );
+                return profile.upwork ? (
+                  <a className="box upw" href={profile.upwork} target="_blank" rel="noopener noreferrer">
+                    {inner}
+                  </a>
+                ) : (
+                  <div className="box upw">{inner}</div>
+                );
+              })()}
               <div className="box">
                 <h4>Industries</h4>
                 <div className="ind">

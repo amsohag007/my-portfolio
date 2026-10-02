@@ -6,7 +6,14 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/abumusa007",
   github: "https://github.com/amsohag007",
   photo: "/images/abu-musa-profile.jpg",
+  // Public Upwork profile URL; leave empty to show the Upwork card without a link.
+  upwork: "",
 };
+
+export const upworkStats = [
+  { value: "$30K+", label: "earned" },
+  { value: "100%", label: "Job Success" },
+];
 
 export const enquiryMailto = `mailto:${profile.email}?subject=Project%20enquiry`;
 

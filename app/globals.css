@@ -306,6 +306,9 @@ section.s { padding: 96px 0; border-top: 1px solid var(--b); scroll-margin-top: 
 .us { font-size: 12.5px; color: var(--t2); }
 .ua { margin-left: auto; color: var(--t3); transition: transform 0.2s, color 0.2s; }
 .upw:hover .ua { color: var(--upwork); transform: translate(2px, -2px); }
+.ustats { display: flex; flex-wrap: wrap; gap: 8px; }
+.ustats span { display: inline-flex; align-items: baseline; gap: 5px; font: 500 12px var(--mono); color: var(--t2); background: rgba(20, 168, 0, 0.12); border: 1px solid rgba(20, 168, 0, 0.35); padding: 5px 10px; border-radius: 999px; }
+.ustats b { font: 600 13px var(--sans); color: var(--hi); }
 .ind { display: flex; flex-wrap: wrap; gap: 6px; }
 .ind span { font-size: 13px; color: var(--t); background: var(--bg2); border: 1px solid var(--b2); padding: 5px 10px; border-radius: 999px; cursor: default; transition: all 0.18s; }
 .ind span:hover { color: #fff; background: var(--sig); border-color: var(--sig); transform: translateY(-1px); }
