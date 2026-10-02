@@ -18,7 +18,8 @@ export const metadata: Metadata = {
 };
 
 // Applies a saved theme before paint, so a light-mode visitor never sees a dark flash.
-const themeScript = `try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}`;
+// Also marks JS as available, so scroll-reveal only hides content when it can reveal it again.
+const themeScript = `document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
