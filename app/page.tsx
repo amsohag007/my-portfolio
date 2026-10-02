@@ -283,12 +283,6 @@ export default function Home() {
                         j.org
                       )}
                     </span>
-                    {j.upwork && (
-                      <span className="trb sm">
-                        <Star size={10} fill="currentColor" strokeWidth={0} />
-                        Top Rated
-                      </span>
-                    )}
                   </h3>
                   {j.points.length > 0 && (
                     <ul>
@@ -306,14 +300,14 @@ export default function Home() {
                 <div className="uh">
                   <span className="ulogo">Up</span>
                   <div>
-                    <b>Top Rated on Upwork</b>
+                    <b>Freelancing on Upwork</b>
                     <span className="us">Freelance Full Stack Engineer · 2021 – 2025</span>
                   </div>
                   <ArrowUpRight className="ua" size={16} strokeWidth={2} />
                 </div>
                 <span className="trb">
                   <Star size={12} fill="currentColor" strokeWidth={0} />
-                  Top Rated
+                  Freelance since 2021
                 </span>
               </a>
               <div className="box">
