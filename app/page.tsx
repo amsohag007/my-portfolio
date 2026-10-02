@@ -2,7 +2,6 @@ import type { CSSProperties, ReactNode } from "react";
 import {
   AppWindow,
   ArrowRight,
-  ArrowUpRight,
   Cloud,
   Code,
   CreditCard,
@@ -10,7 +9,6 @@ import {
   Lightbulb,
   Server,
   Sparkles,
-  Star,
   Users,
 } from "lucide-react";
 import GeneratedCover from "@/components/Cover";
@@ -72,7 +70,6 @@ function SocialLinks() {
     <>
       <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
       <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-      <a href={profile.upwork} target="_blank" rel="noopener noreferrer">Upwork ↗</a>
     </>
   );
 }
@@ -275,13 +272,7 @@ export default function Home() {
                     {j.role}{" "}
                     <span>
                       ·{" "}
-                      {j.upwork ? (
-                        <a className="uplink" href={profile.upwork} target="_blank" rel="noopener noreferrer">
-                          Upwork
-                        </a>
-                      ) : (
-                        j.org
-                      )}
+{j.org}
                     </span>
                   </h3>
                   {j.points.length > 0 && (
@@ -296,20 +287,6 @@ export default function Home() {
             </div>
 
             <div className="side">
-              <a className="box upw" href={profile.upwork} target="_blank" rel="noopener noreferrer">
-                <div className="uh">
-                  <span className="ulogo">Up</span>
-                  <div>
-                    <b>Freelancing on Upwork</b>
-                    <span className="us">Freelance Full Stack Engineer · 2021 – 2025</span>
-                  </div>
-                  <ArrowUpRight className="ua" size={16} strokeWidth={2} />
-                </div>
-                <span className="trb">
-                  <Star size={12} fill="currentColor" strokeWidth={0} />
-                  Freelance since 2021
-                </span>
-              </a>
               <div className="box">
                 <h4>Industries</h4>
                 <div className="ind">

@@ -5,8 +5,6 @@ export const profile = {
   email: "amsohag007@gmail.com",
   linkedin: "https://www.linkedin.com/in/abumusa007",
   github: "https://github.com/amsohag007",
-  // TODO: replace with the real Upwork profile URL.
-  upwork: "https://www.upwork.com/freelancers/",
   photo: "/images/abu-musa-profile.jpg",
 };
 
@@ -231,7 +229,7 @@ export const skills: { group: string; color: string; icon: SkillIcon; items: str
   { group: "Cloud, DevOps and testing", color: "#FF8A65", icon: "cloud", items: ["AWS", "Vercel", "DigitalOcean", "Docker", "Jenkins", "CI/CD", "Serverless", "Playwright", "pytest"] },
 ];
 
-export const experience: { role: string; org: string; when: string; points: string[]; now?: boolean; upwork?: boolean }[] = [
+export const experience: { role: string; org: string; when: string; points: string[]; now?: boolean }[] = [
   {
     role: "Software Developer",
     org: "Rocketlink Technologies",
@@ -257,7 +255,6 @@ export const experience: { role: string; org: string; when: string; points: stri
     role: "Freelance Full Stack Engineer",
     org: "Upwork",
     when: "Jan 2021 – Jun 2025",
-    upwork: true,
     points: [
       "Delivered production-ready web apps for startups and businesses with React, Next.js, Node.js and Express.",
       "Worked with MongoDB, MySQL and PostgreSQL, REST and GraphQL, serverless and CI/CD.",
@@ -272,8 +269,8 @@ export const experience: { role: string; org: string; when: string; points: stri
 export const industries = [
   "Fintech and payments",
   "multi-tenant SaaS",
-  "food delivery and restaurants",
-  "hotel management",
+  "CRM",
+  "AI and agents",
   "e-commerce",
   "automotive services",
   "healthcare and charity",
