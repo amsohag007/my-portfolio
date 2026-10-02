@@ -21,7 +21,6 @@ export const stats = [
   { value: "6+ years", label: "building for the web" },
   { value: "20+ apps", label: "shipped to production" },
   { value: "5 case studies", label: "written in depth" },
-  { value: "MSc in ICT", label: "KUET, Bangladesh" },
 ];
 
 export const marquee = [

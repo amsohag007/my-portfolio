@@ -140,8 +140,8 @@ export default function Home() {
           </div>
 
           <div className="stats rise" style={rise(0.56)}>
-            {stats.map((s) => (
-              <div key={s.value}>
+            {stats.map((s, i) => (
+              <div key={s.value} style={cssVar({ "--i": i })}>
                 <b>{s.value}</b>
                 <span>{s.label}</span>
               </div>

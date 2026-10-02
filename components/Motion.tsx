@@ -48,7 +48,7 @@ export default function Motion() {
       card.style.setProperty("--mx", `${e.clientX - r.left}px`);
       card.style.setProperty("--my", `${e.clientY - r.top}px`);
     };
-    document.querySelectorAll<HTMLElement>(".bx, .wc").forEach((c) => {
+    document.querySelectorAll<HTMLElement>(".bx, .wc, .stats > div").forEach((c) => {
       c.addEventListener("mousemove", spot);
       cleanups.push(() => c.removeEventListener("mousemove", spot));
     });
@@ -56,10 +56,12 @@ export default function Motion() {
     // Stats count up when the strip enters the viewport.
     const stats = document.querySelector(".stats");
     if (stats && !reduce) {
+      stats.classList.add("armed");
       const so = new IntersectionObserver(
         (entries) => {
           if (!entries.some((e) => e.isIntersecting)) return;
           so.disconnect();
+          stats.classList.add("in");
           stats.querySelectorAll("b").forEach((b) => {
             const m = b.textContent?.match(/^(\d+)(.*)$/);
             if (!m) return;
@@ -74,7 +76,7 @@ export default function Motion() {
                 if (k < 1) requestAnimationFrame(step);
               };
               requestAnimationFrame(step);
-            }, 600);
+            }, 350);
           });
         },
         { threshold: 0.4 },
