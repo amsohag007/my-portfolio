@@ -297,7 +297,7 @@ export default function Home() {
                       <span className="ulogo">Up</span>
                       <div>
                         <b>Freelancing on Upwork</b>
-                        <span className="us">Freelance Full Stack Engineer · 2021 – 2025</span>
+                        <span className="us">Freelance Full Stack Engineer</span>
                       </div>
                       {profile.upwork && <ArrowUpRight className="ua" size={16} strokeWidth={2} />}
                     </div>
