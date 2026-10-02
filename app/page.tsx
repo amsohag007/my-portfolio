@@ -72,6 +72,7 @@ function SocialLinks() {
     <>
       <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
       <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href={profile.upwork} target="_blank" rel="noopener noreferrer">Upwork ↗</a>
     </>
   );
 }

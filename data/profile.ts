@@ -7,7 +7,7 @@ export const profile = {
   github: "https://github.com/amsohag007",
   photo: "/images/abu-musa-profile.jpg",
   // Public Upwork profile URL; leave empty to show the Upwork card without a link.
-  upwork: "",
+  upwork: "https://www.upwork.com/freelancers/~014c9e96d68971f40c",
 };
 
 export const upworkStats = [
