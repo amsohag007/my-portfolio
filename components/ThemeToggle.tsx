@@ -1,5 +1,7 @@
 "use client";
 
+import { Moon, Sun } from "lucide-react";
+
 export default function ThemeToggle() {
   function toggle() {
     const root = document.documentElement;
@@ -11,13 +13,9 @@ export default function ThemeToggle() {
   }
 
   return (
-    <button
-      type="button"
-      onClick={toggle}
-      aria-label="Toggle colour theme"
-      className="h-8 rounded-lg border border-line bg-surface px-3 text-[13px] text-muted hover:text-text"
-    >
-      Theme
+    <button type="button" className="tt" onClick={toggle} aria-label="Toggle theme">
+      <Sun className="sun" size={16} strokeWidth={2} />
+      <Moon className="moon" size={16} strokeWidth={2} />
     </button>
   );
 }

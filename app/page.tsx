@@ -1,34 +1,79 @@
-import Image from "next/image";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import {
+  AppWindow,
+  ArrowRight,
+  ArrowUpRight,
+  Cloud,
+  Code,
+  CreditCard,
+  Database,
+  Lightbulb,
+  Server,
+  Sparkles,
+  Star,
+  Users,
+} from "lucide-react";
+import GeneratedCover from "@/components/Cover";
 import Motion from "@/components/Motion";
+import Projects from "@/components/Projects";
+import Showcase from "@/components/Showcase";
 import ThemeToggle from "@/components/ThemeToggle";
 import {
   caseStudies,
   caseStudiesIndex,
-  clientProjects,
   education,
+  enquiryMailto,
   experience,
   industries,
+  marquee,
   profile,
   services,
   skills,
   stats,
+  type ServiceIcon,
+  type SkillIcon,
 } from "@/data/profile";
 
-const wrap = "mx-auto w-full max-w-5xl px-5";
-const btn =
-  "inline-flex h-11 items-center rounded-[10px] border border-line bg-surface px-[18px] text-[15px] font-semibold text-text hover:border-accent lift";
-const btnPrimary =
-  "inline-flex h-11 items-center rounded-[10px] border border-accent bg-accent px-[18px] text-[15px] font-semibold text-accent-ink hover:opacity-90 lift";
-const card = "rounded-[14px] border border-line bg-surface";
-const v = (name: string, n: number) => ({ [name]: n }) as CSSProperties;
+const cssVar = (vars: Record<string, string | number>) => vars as CSSProperties;
+const rise = (seconds: number) => cssVar({ "--d": `${seconds}s` });
 
-function SectionHeader({ title, sub }: { title: string; sub: string }) {
+const serviceIcons: Record<ServiceIcon, ReactNode> = {
+  lightbulb: <Lightbulb size={20} strokeWidth={1.7} />,
+  code: <Code size={20} strokeWidth={1.7} />,
+  card: <CreditCard size={20} strokeWidth={1.7} />,
+  sparkles: <Sparkles size={20} strokeWidth={1.7} />,
+  users: <Users size={20} strokeWidth={1.7} />,
+};
+
+const skillIcons: Record<SkillIcon, ReactNode> = {
+  server: <Server size={18} strokeWidth={1.7} />,
+  frontend: <AppWindow size={18} strokeWidth={1.7} />,
+  sparkles: <Sparkles size={18} strokeWidth={1.7} />,
+  card: <CreditCard size={18} strokeWidth={1.7} />,
+  database: <Database size={18} strokeWidth={1.7} />,
+  cloud: <Cloud size={18} strokeWidth={1.7} />,
+};
+
+function SectionHead({ eye, title, intro, children }: { eye: string; title: string; intro: string; children?: ReactNode }) {
   return (
-    <div data-reveal>
-      <h2 className="mb-2 text-[26px] font-semibold tracking-tight">{title}</h2>
-      <p className="mb-7 text-muted">{sub}</p>
+    <div className="sh">
+      <div>
+        <div className="eye">{eye}</div>
+        <h2>{title}</h2>
+        <p>{intro}</p>
+      </div>
+      {children}
     </div>
+  );
+}
+
+function SocialLinks() {
+  return (
+    <>
+      <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href={profile.upwork} target="_blank" rel="noopener noreferrer">Upwork ↗</a>
+    </>
   );
 }
 
@@ -36,143 +81,180 @@ export default function Home() {
   return (
     <>
       <Motion />
-      <nav className="sticky top-0 z-10 border-b border-line bg-bg/90 backdrop-blur">
-        <div className={`${wrap} flex h-14 items-center justify-between gap-4`}>
-          <a href="#top" className="font-bold">
+
+      <nav className="nav">
+        <div className="wrap">
+          <a href="#top" className="logo">
+            <i>M</i>
             {profile.name}
           </a>
-          <ul className="hidden gap-5 text-sm text-muted md:flex">
-            <li><a className="hover:text-text" href="#services">Services</a></li>
-            <li><a className="hover:text-text" href="#work">Work</a></li>
-            <li><a className="hover:text-text" href="#projects">Projects</a></li>
-            <li><a className="hover:text-text" href="#skills">Skills</a></li>
-            <li><a className="hover:text-text" href="#experience">Experience</a></li>
-            <li><a className="hover:text-text" href="#contact">Contact</a></li>
-          </ul>
-          <ThemeToggle />
+          <div className="links">
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+          </div>
+          <div className="nav-right">
+            <ThemeToggle />
+            <a href="#contact" className="btn btn-p nav-cta">Get in touch</a>
+          </div>
         </div>
       </nav>
 
-      <header id="top" className={`${wrap} pt-14 pb-10 md:pt-22 md:pb-14`}>
-        <div className="flex flex-col-reverse items-start gap-8 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-2xl">
-            <p className="enter mb-3 text-sm font-semibold tracking-wide text-hl" style={v("--d", 0)}>
-              {profile.title} · {profile.location}
-            </p>
-            <h1 style={v("--d", 1)} className="enter mb-4 text-[34px] leading-[1.1] font-bold tracking-tight md:text-[52px]">
-              {profile.headline}
-            </h1>
-            <p className="enter mb-7 text-[17px] text-muted md:text-[19px]" style={v("--d", 2)}>{profile.lead}</p>
-            <div className="enter flex flex-wrap gap-3" style={v("--d", 3)}>
-              <a className={btnPrimary} href="#work">View case studies</a>
-              <a className={btn} href={`mailto:${profile.email}`}>Email me</a>
-              <a className={btn} href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a className={btn} href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+      <header className="hero" id="top">
+        <div className="wrap">
+          <div className="hero-g">
+            <div>
+              <div className="who rise" style={rise(0)}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={profile.photo} alt={profile.name} />
+                <div>
+                  <div className="n">{profile.name}</div>
+                  <div className="m">{profile.title} · {profile.location}</div>
+                </div>
+              </div>
+              <h1 className="rise" style={rise(0.08)}>
+                I build <em>SaaS platforms, payment integrations and AI agents</em> that hold up in production.
+              </h1>
+              <p className="lede rise" style={rise(0.16)}>
+                6+ years turning product ideas into scalable web applications, end to end: architecture, back end, front end,
+                testing and deployment.
+              </p>
+              <div className="cta rise" style={rise(0.24)}>
+                <a href="#work" className="btn btn-p">
+                  View case studies <ArrowRight size={14} strokeWidth={2} />
+                </a>
+                <a href={`mailto:${profile.email}`} className="btn btn-s">Email me</a>
+              </div>
+              <div className="social rise" style={rise(0.32)}>
+                <span className="avail">Available for freelance and contract work</span>
+              </div>
+              <div className="social rise" style={rise(0.4)}>
+                <SocialLinks />
+              </div>
+            </div>
+            <div className="rise" style={rise(0.48)}>
+              <Showcase />
             </div>
           </div>
-          <div className="enter shrink-0" style={v("--d", 2)}>
-          <Image
-            src={profile.photo}
-            alt={profile.name}
-            width={176}
-            height={176}
-            priority
-            className="photo-glow h-28 w-28 shrink-0 rounded-full border-2 border-accent object-cover md:h-44 md:w-44"
-          />
+
+          <div className="stats rise" style={rise(0.56)}>
+            {stats.map((s) => (
+              <div key={s.value}>
+                <b>{s.value}</b>
+                <span>{s.label}</span>
+              </div>
+            ))}
           </div>
-        </div>
-        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4" data-stagger>
-          {stats.map((s, i) => {
-            const m = s.value.match(/^(\d+)(.*)$/);
-            return (
-            <div key={s.value} className={`${card} lift p-4`} style={v("--i", i)}>
-              {m ? (
-                <b className="block text-2xl tracking-tight" data-count={m[1]} data-suffix={m[2]}>{s.value}</b>
-              ) : (
-                <b className="block text-2xl tracking-tight">{s.value}</b>
-              )}
-              <span className="text-sm text-muted">{s.label}</span>
+
+          <div className="marq rise" style={rise(0.64)}>
+            <span className="ml">Clients &amp; teams</span>
+            <div className="mq">
+              <div className="mt">
+                {[...marquee, ...marquee].map((m, i) => (
+                  <span key={m + i} aria-hidden={i >= marquee.length}>
+                    {m}
+                  </span>
+                ))}
+              </div>
             </div>
-            );
-          })}
+          </div>
         </div>
       </header>
 
-      <section id="services" className="border-t border-line py-14">
-        <div className={wrap}>
-          <SectionHeader
-            title="What I can help with"
-            sub="From the first architecture sketch to a feature running in production."
-          />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
-            {services.map((s, i) => (
-              <div key={s.title} className={`${card} lift p-5`} style={v("--i", i)}>
-                <h3 className="mb-1.5 font-semibold">{s.title}</h3>
-                <p className="text-[15px] text-muted">{s.text}</p>
+      <section className="s" id="work">
+        <div className="wrap">
+          <SectionHead eye="Featured work" title="Case studies" intro="In-depth case studies: the problem, the architecture, the decisions and what I learned.">
+            <a href={caseStudiesIndex} className="btn btn-s" target="_blank" rel="noopener noreferrer">See all case studies →</a>
+          </SectionHead>
+          <div className="work">
+            {caseStudies.map((c) => (
+              <a key={c.title} className="wc" style={cssVar({ "--c": c.color })} href={c.href} target="_blank" rel="noopener noreferrer">
+                {c.cover.kind === "image" ? (
+                  <div className="cov">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={c.cover.src} alt="" loading="lazy" />
+                  </div>
+                ) : (
+                  <div className="cov gen">
+                    <GeneratedCover cover={c.cover} tag={c.tag} />
+                  </div>
+                )}
+                <div className="bd">
+                  <span className="cat">{c.tag}</span>
+                  <h3>{c.title}</h3>
+                  <p>{c.summary}</p>
+                  <div className="stack">
+                    {c.stack.map((s) => (
+                      <span key={s}>{s}</span>
+                    ))}
+                  </div>
+                  <span className="read">{c.cta} →</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="s" id="services">
+        <div className="wrap">
+          <SectionHead eye="Services" title="What I can help with" intro="From the first architecture sketch to a feature running in production." />
+          <div className="bento">
+            {services.map((s) => (
+              <div key={s.no} className={`bx${s.wide ? " w2" : ""}`} style={cssVar({ "--c": s.color })}>
+                <span className="bic">{serviceIcons[s.icon]}</span>
+                <span className="no">{s.no}</span>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+                {s.flow && (
+                  <div className="flow">
+                    {s.flow.map((f, i) => (
+                      <span key={f} style={{ display: "contents" }}>
+                        {i > 0 && <i>→</i>}
+                        <span className={i === s.flow!.length - 1 ? "hl" : ""}>{f}</span>
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
-            <div className="lift flex flex-col justify-center rounded-[14px] border border-accent bg-accent-soft p-5" style={v("--i", services.length)}>
-              <h3 className="mb-1.5 font-semibold">Available for freelance and contract work</h3>
-              <p className="mb-4 text-[15px] text-muted">Tell me what you&apos;re building and where you need help.</p>
-              <a className={`${btnPrimary} self-start`} href={`mailto:${profile.email}?subject=Project%20enquiry`}>
-                Get in touch
+            <div className="bx w2 hire2">
+              <div>
+                <span className="avail">Open for new projects</span>
+                <h3>Available for freelance and contract work</h3>
+                <p>Tell me what you&apos;re building and where you need help.</p>
+              </div>
+              <a href={enquiryMailto} className="hbtn">
+                Get in touch <ArrowRight size={14} strokeWidth={2} />
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="work" className="border-t border-line py-14">
-        <div className={wrap}>
-          <SectionHeader title="Featured work" sub="In-depth case studies: the problem, the architecture, the decisions and what I learned." />
-          <div className="grid gap-4 md:grid-cols-2" data-stagger>
-            {caseStudies.map((c, i) => (
-              <a key={c.title} href={c.href} target="_blank" rel="noopener noreferrer" className={`${card} lift flex flex-col p-[22px] hover:border-accent`} style={v("--i", i)}>
-                <span className="text-xs font-semibold tracking-widest text-hl uppercase">{c.tag}</span>
-                <h3 className="mt-1.5 mb-2 text-lg font-semibold">{c.title}</h3>
-                <p className="mb-3.5 text-[15px] text-muted">{c.summary}</p>
-                <span className="mt-auto text-[13px] text-muted">{c.stack}</span>
-                <span className="mt-3 text-sm font-semibold text-accent">{c.cta} →</span>
-              </a>
-            ))}
-          </div>
-          <p className="mt-4">
-            <a className="text-accent hover:underline" href={caseStudiesIndex} target="_blank" rel="noopener noreferrer">
-              See all case studies →
-            </a>
-          </p>
+      <section className="s" id="projects">
+        <div className="wrap">
+          <SectionHead eye="Client projects" title="Products I built or worked on" intro="Products I built or worked on for clients and employers." />
+          <Projects />
         </div>
       </section>
 
-      <section id="projects" className="border-t border-line py-14">
-        <div className={wrap}>
-          <SectionHeader title="Client projects" sub="Products I built or worked on for clients and employers." />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
-            {clientProjects.map((p, i) => (
-              <a key={p.title} href={p.href} target="_blank" rel="noopener noreferrer" className={`${card} lift group overflow-hidden hover:border-accent`} style={v("--i", i)}>
-                <div className="relative aspect-[16/10] border-b border-line bg-chip">
-                  <Image src={p.image} alt={`${p.title} screenshot`} fill sizes="(min-width: 1024px) 320px, 50vw" className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]" />
+      <section className="s" id="skills">
+        <div className="wrap">
+          <SectionHead eye="Skills" title="The tools I use" intro="The tools I use to take a product from idea to production." />
+          <div className="skills">
+            {skills.map((s) => (
+              <div key={s.group} className="sk" style={cssVar({ "--c": s.color })}>
+                <div className="hd">
+                  <span className="ic">{skillIcons[s.icon]}</span>
+                  <h3>{s.group}</h3>
+                  <span className="ct">{String(s.items.length).padStart(2, "0")}</span>
                 </div>
-                <div className="p-4">
-                  <h3 className="font-semibold">{p.title}</h3>
-                  <p className="mt-1 text-sm text-muted">{p.summary}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" className="border-t border-line py-14">
-        <div className={wrap}>
-          <SectionHeader title="Skills" sub="The tools I use to take a product from idea to production." />
-          <div className="grid gap-4 md:grid-cols-2" data-stagger>
-            {skills.map((s, i) => (
-              <div key={s.group} className={`${card} lift p-5`} style={v("--i", i)}>
-                <h3 className="mb-3 text-[15px] font-semibold">{s.group}</h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="chips">
                   {s.items.map((i) => (
-                    <span key={i} className="rounded-full bg-chip px-3 py-1 text-[13px] text-chip-text">{i}</span>
+                    <span key={i}>{i}</span>
                   ))}
                 </div>
               </div>
@@ -181,69 +263,108 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="border-t border-line py-14">
-        <div className={wrap}>
-          <SectionHeader title="Experience" sub="Product companies, agencies and freelance clients across Europe and Asia." />
-          <div className="ml-1.5" data-stagger>
-            {experience.map((j, idx) => (
-              <div key={j.org + j.when} style={v("--i", idx)} className={`relative border-l-2 border-line pl-7 ${idx === experience.length - 1 ? "" : "pb-7"}`}>
-                <span className="absolute top-1.5 -left-[7px] h-3 w-3 rounded-full border-2 border-hl bg-surface" />
-                <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
-                  <h3 className="text-[17px] font-semibold">
-                    {j.role} <span className="font-medium text-muted">· {j.org}</span>
+      <section className="s" id="experience">
+        <div className="wrap">
+          <SectionHead eye="Experience" title="Where I've worked" intro="Product companies, agencies and freelance clients across Europe and Asia." />
+          <div className="xp">
+            <div className="tl">
+              {experience.map((j) => (
+                <div key={j.org + j.when} className={`job${j.now ? " now" : ""}${j.points.length === 0 ? " mini" : ""}`}>
+                  <div className="when">{j.when}</div>
+                  <h3>
+                    {j.role}{" "}
+                    <span>
+                      ·{" "}
+                      {j.upwork ? (
+                        <a className="uplink" href={profile.upwork} target="_blank" rel="noopener noreferrer">
+                          Upwork
+                        </a>
+                      ) : (
+                        j.org
+                      )}
+                    </span>
+                    {j.upwork && (
+                      <span className="trb sm">
+                        <Star size={10} fill="currentColor" strokeWidth={0} />
+                        Top Rated
+                      </span>
+                    )}
                   </h3>
-                  <span className="text-sm whitespace-nowrap text-muted">{j.when}</span>
+                  {j.points.length > 0 && (
+                    <ul>
+                      {j.points.map((p) => (
+                        <li key={p}>{p}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-                {j.points.length > 0 && (
-                  <ul className="mt-2 list-disc pl-[18px] text-[15px] text-muted">
-                    {j.points.map((p) => (
-                      <li key={p} className="my-0.5">{p}</li>
-                    ))}
-                  </ul>
-                )}
+              ))}
+            </div>
+
+            <div className="side">
+              <a className="box upw" href={profile.upwork} target="_blank" rel="noopener noreferrer">
+                <div className="uh">
+                  <span className="ulogo">Up</span>
+                  <div>
+                    <b>Top Rated on Upwork</b>
+                    <span className="us">Freelance Full Stack Engineer · 2021 – 2025</span>
+                  </div>
+                  <ArrowUpRight className="ua" size={16} strokeWidth={2} />
+                </div>
+                <span className="trb">
+                  <Star size={12} fill="currentColor" strokeWidth={0} />
+                  Top Rated
+                </span>
+              </a>
+              <div className="box">
+                <h4>Industries</h4>
+                <div className="ind">
+                  {industries.map((i) => (
+                    <span key={i}>{i}</span>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-line py-14">
-        <div className={`${wrap} grid gap-4 md:grid-cols-2`} data-stagger>
-          <div className={`${card} p-5`}>
-            <h3 className="mb-2.5 text-[15px] font-semibold">Industries</h3>
-            <p className="text-[15px] text-muted">{industries}</p>
-          </div>
-          <div className={`${card} p-5`}>
-            <h3 className="mb-2.5 text-[15px] font-semibold">Education</h3>
-            {education.map((e) => (
-              <p key={e.degree} className="mb-2 text-[15px] text-muted">
-                <b className="font-semibold text-text">{e.degree}</b>
-                <br />
-                {e.school}, {e.years}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="border-t border-line py-14">
-        <div className={wrap}>
-          <div className="rounded-2xl bg-accent-soft p-6 md:p-8" data-reveal>
-            <h2 className="mb-2 text-[26px] font-semibold tracking-tight">Let&apos;s build something</h2>
-            <p className="mb-5 max-w-xl text-muted">
-              Building a SaaS product, a payment integration or an AI feature? I&apos;m happy to talk through the idea and how to get it to production.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a className={btnPrimary} href={`mailto:${profile.email}`}>{profile.email}</a>
-              <a className={btn} href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a className={btn} href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+              <div className="box">
+                <h4>Education</h4>
+                <div className="edu">
+                  {education.map((e) => (
+                    <div key={e.short} className="ed">
+                      <span className="eic">{e.short}</span>
+                      <div>
+                        <b>{e.degree}</b>
+                        <span>{e.school}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <footer className={`${wrap} pt-8 pb-12 text-[13px] text-muted`}>
-        © {new Date().getFullYear()} {profile.name} · Built with Next.js, TypeScript and Tailwind CSS
+      <section className="contact" id="contact">
+        <div className="wrap">
+          <div className="eye" style={{ justifyContent: "center" }}>Contact</div>
+          <h2>Let&apos;s build something</h2>
+          <p>
+            Building a SaaS product, a payment integration or an AI feature? I&apos;m happy to talk through the idea and how to get it
+            to production.
+          </p>
+          <a className="mail" href={`mailto:${profile.email}`}>
+            {profile.email} <span className="cp">↗</span>
+          </a>
+          <div className="social" style={{ justifyContent: "center", marginTop: 24 }}>
+            <SocialLinks />
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div className="wrap">
+          <span>© {new Date().getFullYear()} {profile.name}</span>
+          <span>Built with Next.js, TypeScript and Tailwind CSS</span>
+        </div>
       </footer>
     </>
   );

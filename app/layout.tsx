@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const interTight = Inter_Tight({ variable: "--font-inter-tight", subsets: ["latin"], weight: ["400", "500", "600"] });
+const jetbrainsMono = JetBrains_Mono({ variable: "--font-jetbrains-mono", subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://abumusa-portfolio.web.app"),
@@ -13,21 +14,20 @@ export const metadata: Metadata = {
     title: "Md. Abu Musa — Full-Stack Software Engineer",
     description: "Multi-tenant SaaS, payment integrations and AI agents, from architecture to production.",
     type: "website",
-    images: ["/images/abu-musa-profile.jpg"],
+    images: ["/images/covers/merchant-agent-cover.jpg"],
   },
 };
 
-// Applies a saved theme before paint, so a light-mode visitor never sees a dark flash.
-// Also marks JS as available, so scroll-reveal only hides content when it can reveal it again.
-const themeScript = `document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}`;
+// Sets the theme before paint: the saved choice, else the OS preference (dark by default).
+const themeScript = `try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${interTight.variable} ${jetbrainsMono.variable}`} data-theme="dark" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-full font-sans">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
