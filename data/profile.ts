@@ -34,7 +34,6 @@ export const marquee = [
   "SOFTIC",
   "Andit",
   "AndShop",
-  "Appstick",
 ];
 
 const CS = "https://amsohag007.github.io/case-studies";
@@ -241,9 +240,10 @@ export const experience: { role: string; org: string; when: string; points: stri
     when: "Jun 2024 – Present",
     now: true,
     points: [
-      "Build scalable, secure web applications across front end and back end with clean architecture.",
-      "Develop REST APIs with authentication and role-based access; integrate third-party APIs and payment gateways.",
-      "Manage PostgreSQL and MySQL schemas; deploy on AWS, Vercel and Docker with CI/CD.",
+      "Core engineer on a multi-tenant payments SaaS used by merchants across Europe, owning features end to end from database design to the merchant-facing UI.",
+      "Built payment-gateway adapters for SEPA Direct Debit and card processors: submission, webhooks, settlement reconciliation and chargebacks.",
+      "Designed background import pipelines for large settlement, chargeback and lead CSVs, safe to resume after a crash.",
+      "Shipped configurable roles and permissions, an AI assistant with per-tenant usage limits and cost tracking, and email and physical-letter autoresponders.",
     ],
   },
   {
@@ -251,24 +251,46 @@ export const experience: { role: string; org: string; when: string; points: stri
     org: "EA-TECH",
     when: "Dec 2023 – Oct 2025",
     points: [
-      "Built end-to-end web applications with Node.js, NestJS, Fastify, Express, React and Next.js.",
-      "Developed high-performance REST and GraphQL APIs and high-converting, SEO-optimised landing pages.",
-      "Implemented serverless architectures and CI/CD pipelines on AWS and Vercel.",
+      "Delivered client products end to end, from architecture and APIs to landing pages and cloud deployment.",
+      "Built backends and REST/GraphQL APIs with Node.js, NestJS, Fastify and Express; web apps in React and Next.js optimised for speed, SEO and conversion.",
+      "Set up serverless deployments on AWS and Vercel with CI/CD, working directly with founders and marketing teams.",
     ],
   },
   {
     role: "Freelance Full Stack Engineer",
     org: "Upwork",
-    when: "Jan 2021 – Jun 2025",
+    when: "Jan 2020 – Jun 2025",
     points: [
-      "Delivered production-ready web apps for startups and businesses with React, Next.js, Node.js and Express.",
-      "Worked with MongoDB, MySQL and PostgreSQL, REST and GraphQL, serverless and CI/CD.",
+      "Took startup and small-business ideas from scope to production: web apps, dashboards and APIs across e-commerce, hospitality, healthcare and automotive.",
+      "Integrated payment gateways and third-party APIs, and set up serverless deployments and CI/CD so clients could ship without a DevOps hire.",
     ],
   },
-  { role: "Software Engineer", org: "NETMARK", when: "Nov 2022 – Nov 2023", points: [] },
-  { role: "Software Engineer", org: "SOFTIC", when: "Jul 2022 – Jan 2023", points: [] },
-  { role: "Full Stack Engineer (MERN)", org: "Andit", when: "Jun 2021 – Aug 2022", points: [] },
-  { role: "React Developer", org: "Appstick", when: "Jul 2020 – May 2021", points: [] },
+  {
+    role: "Software Engineer",
+    org: "NETMARK",
+    when: "Nov 2022 – Nov 2023",
+    points: [
+      "Car-service booking platform for a Norwegian product company: booking flow, three handover options (drop-off, pickup, roadside trailer), real-time customer–technician chat and invoicing.",
+      "Digital NFC business card: card designer, profile editor and the public profile page that opens on tap.",
+    ],
+  },
+  {
+    role: "Software Engineer",
+    org: "SOFTIC",
+    when: "Jul 2022 – Jan 2023",
+    points: [
+      "Founding backend engineer on a live sports portal: set up the NestJS codebase, designed the database and built real-time score updates and push notifications, with RabbitMQ for match-day traffic spikes.",
+    ],
+  },
+  {
+    role: "Full Stack Engineer",
+    org: "Andit",
+    when: "Jun 2021 – Aug 2022",
+    points: [
+      "Grew from shipping features to owning the whole food-delivery platform: restaurant dashboard, customer ordering app and rider flow on one GraphQL API.",
+      "Shipped vouchers, configurable pricing rules and order reporting; also built supermarket management software.",
+    ],
+  },
 ];
 
 export const industries = [
