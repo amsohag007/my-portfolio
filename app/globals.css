@@ -399,3 +399,7 @@ section.s { padding: 96px 0; border-top: 1px solid var(--b); scroll-margin-top: 
 .cs-cta-box h2 { font-size: 24px; margin-top: 8px; }
 .cs-cta-box p { margin-top: 6px; color: var(--t2); max-width: 46ch; }
 @media (max-width: 600px) { .cs { padding-top: 32px; } .cs-body { font-size: 15.5px; } .cs-item dl { grid-template-columns: 1fr; gap: 2px; } .cs-item dd { margin-bottom: 6px; } }
+
+.contact .studio { margin: 28px auto 0; font-size: 14.5px; color: var(--t3); }
+.contact .studio a { color: var(--sig2); font-weight: 500; }
+.contact .studio a:hover { text-decoration: underline; text-underline-offset: 3px; }
