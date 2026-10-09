@@ -9,7 +9,7 @@ type Slide = {
   group: "cs" | "cw";
   tag: string;
   caption: string;
-  href: string;
+  href?: string;
   color?: string;
   image?: string;
   domain?: string;
@@ -147,7 +147,7 @@ export default function Showcase() {
       </div>
 
       <div className="show-foot">
-        <a className={`capw${swapping ? " sw" : ""}`} href={caption.href} target="_blank" rel="noopener noreferrer">
+        <a className={`capw${swapping ? " sw" : ""}`} href={caption.href} target={caption.href ? "_blank" : undefined} rel="noopener noreferrer">
           <span className="tg">{caption.tag}</span>
           <span className="cap">{caption.caption}</span>
           <span className="go">→</span>

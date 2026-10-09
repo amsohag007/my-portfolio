@@ -118,7 +118,7 @@ export const caseStudies: CaseStudy[] = [
 export type Project = {
   name: string;
   tag: string;
-  url: string;
+  url?: string;
   domain: string;
   description: string;
   image?: string;
@@ -152,8 +152,7 @@ export const projects: Project[] = [
   {
     name: "Russgo",
     tag: "Digital cards",
-    url: "https://russgo.staging.netmark.no/",
-    domain: "russgo.staging.netmark.no",
+    domain: "Russgo",
     description: "Digital card service.",
     image: "/images/projects/russgo.jpg",
   },

@@ -51,10 +51,14 @@ export default function Projects() {
             </div>
             <div className="pb">
               <span className="ptag">{p.tag}</span>
-              <a className="pn" href={p.url} target="_blank" rel="noopener noreferrer">
-                {p.name}
-                <ArrowUpRight size={15} strokeWidth={2} />
-              </a>
+              {p.url ? (
+                <a className="pn" href={p.url} target="_blank" rel="noopener noreferrer">
+                  {p.name}
+                  <ArrowUpRight size={15} strokeWidth={2} />
+                </a>
+              ) : (
+                <span className="pn">{p.name}</span>
+              )}
               <p>{p.description}</p>
             </div>
           </div>
