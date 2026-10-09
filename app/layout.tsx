@@ -7,11 +7,11 @@ const jetbrainsMono = JetBrains_Mono({ variable: "--font-jetbrains-mono", subset
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://abumusa-portfolio.web.app"),
-  title: "Md. Abu Musa — Full-Stack Software Engineer",
+  title: "Md. Abu Musa — SaaS, Payments & AI Agent Engineer",
   description:
     "Full-stack engineer building multi-tenant SaaS platforms, payment integrations and AI agents. 6+ years, 20+ apps shipped.",
   openGraph: {
-    title: "Md. Abu Musa — Full-Stack Software Engineer",
+    title: "Md. Abu Musa — SaaS, Payments & AI Agent Engineer",
     description: "Multi-tenant SaaS, payment integrations and AI agents, from architecture to production.",
     type: "website",
     images: ["/images/covers/merchant-agent-cover.jpg"],

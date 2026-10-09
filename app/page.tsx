@@ -166,11 +166,11 @@ export default function Home() {
       <section className="s" id="work">
         <div className="wrap">
           <SectionHead eye="Featured work" title="Case studies" intro="In-depth case studies: the problem, the architecture, the decisions and what I learned.">
-            <a href={caseStudiesIndex} className="btn btn-s" target="_blank" rel="noopener noreferrer">See all case studies →</a>
+            <a href={caseStudiesIndex} className="btn btn-s">See all case studies →</a>
           </SectionHead>
           <div className="work">
             {caseStudies.map((c) => (
-              <a key={c.title} className="wc" style={cssVar({ "--c": c.color })} href={c.href} target="_blank" rel="noopener noreferrer">
+              <a key={c.title} className="wc" style={cssVar({ "--c": c.color })} href={c.href}>
                 {c.cover.kind === "image" ? (
                   <div className="cov">
                     {/* eslint-disable-next-line @next/next/no-img-element */}

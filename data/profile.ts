@@ -36,7 +36,7 @@ export const marquee = [
   "AndShop",
 ];
 
-const CS = "https://amsohag007.github.io/case-studies";
+const CS = "/case-studies";
 export const caseStudiesIndex = `${CS}/`;
 
 export type Cover =
