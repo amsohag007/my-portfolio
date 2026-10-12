@@ -365,6 +365,8 @@ section.s { padding: 96px 0; border-top: 1px solid var(--b); scroll-margin-top: 
 .cs-body h2 { font-size: 24px; letter-spacing: -0.01em; margin: 48px 0 14px; padding-top: 22px; border-top: 1px solid var(--b); }
 .cs-body h3 { font-size: 18px; margin: 30px 0 10px; }
 .cs-body ul, .cs-body ol { margin: 0 0 18px; padding-left: 22px; }
+.cs-body ul { list-style: disc; }
+.cs-body ol { list-style: decimal; }
 .cs-body li { margin: 6px 0; }
 .cs-body li::marker { color: var(--sig2); }
 .cs-body strong { color: var(--hi); font-weight: 600; }
